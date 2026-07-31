@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Astraiva — Indie Game Studio, Apps &amp; Tools | Games, Apps &amp; Tools by Tushant Sharma</title>
+  <meta name="description" content="Astraiva is an independent studio founded by Tushant Sharma. Games, learning apps and practical tools — Crown of Scars, Stumped!, LinguaTomo, VibeGaffer, HorizonAI and more. Free, offline-first and privacy-first.">
+  <meta name="author" content="Astraiva — Tushant Sharma">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#0c0c11">
+  <link rel="canonical" href="https://astraiva.com/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Astraiva">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:url" content="https://astraiva.com/">
+  <meta property="og:title" content="Astraiva — Indie Game Studio, Apps & Tools">
+  <meta property="og:description" content="Independent studio shipping games, learning apps and practical tools with real polish. Crown of Scars, Stumped!, LinguaTomo, VibeGaffer and more. Free, offline-first, privacy-first.">
+  <meta property="og:image" content="https://astraiva.com/assets/img/crown-of-scars.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://astraiva.com/#organization",
+    "name": "Astraiva",
+    "url": "https://astraiva.com/",
+    "email": "astraiva.apps@gmail.com",
+    "founder": { "@type": "Person", "name": "Tushant Sharma", "url": "https://github.com/Jadax" },
+    "sameAs": ["https://github.com/Jadax", "https://ko-fi.com/jadax"],
+    "description": "Astraiva is an independent studio founded by Tushant Sharma that designs, builds and ships games, learning apps and practical tools."
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": "https://astraiva.com/#website",
+    "name": "Astraiva",
+    "url": "https://astraiva.com/",
+    "publisher": { "@id": "https://astraiva.com/#organization" },
+    "inLanguage": "en"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Astraiva products",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "item": { "@type": "SoftwareApplication", "name": "Crown of Scars", "applicationCategory": "GameApplication", "operatingSystem": "Windows", "description": "A kingdom-building deck roguelike with 210 cards, five bosses and branching story events. In development in Godot 4." } },
+      { "@type": "ListItem", "position": 2, "item": { "@type": "SoftwareApplication", "name": "Stumped!", "applicationCategory": "GameApplication", "operatingSystem": "Windows", "description": "A cricket management simulation covering transfers, training, tactics, finances and the media. In development." } },
+      { "@type": "ListItem", "position": 3, "item": { "@type": "SoftwareApplication", "name": "LinguaTomo", "applicationCategory": "EducationalApplication", "operatingSystem": "Web, Android, iOS", "url": "https://jadax.github.io/LinguaTomo-Web/", "description": "A free, offline-first Japanese learning app with 1,800+ words across CEFR and JLPT tiers, grammar, handwriting and spaced repetition." } },
+      { "@type": "ListItem", "position": 4, "item": { "@type": "SoftwareApplication", "name": "VibeGaffer", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Web", "url": "https://jadax.github.io/VibeGaffer/", "description": "A Fantasy Premier League squad optimizer using an ILP solver and multi-signal expected-points projection." } },
+      { "@type": "ListItem", "position": 5, "item": { "@type": "SoftwareApplication", "name": "ThetaForge", "applicationCategory": "FinanceApplication", "operatingSystem": "Any", "description": "A paper-first options trading intelligence system with a 12-agent research pipeline." } },
+      { "@type": "ListItem", "position": 6, "item": { "@type": "SoftwareApplication", "name": "HorizonAI", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "url": "https://github.com/Jadax/horizon-ai", "description": "An open-source autonomous vertical-video factory that writes, voices and publishes captioned shorts." } },
+      { "@type": "ListItem", "position": 7, "item": { "@type": "SoftwareApplication", "name": "Rovyniq", "applicationCategory": "FinanceApplication", "operatingSystem": "Any", "description": "Evidence-led tax preparation for South Africa's ITR12 with year-versioned, deterministic rules." } },
+      { "@type": "ListItem", "position": 8, "item": { "@type": "SoftwareApplication", "name": "GPRO Strategy Tool", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Web", "description": "A free Tampermonkey race engineer for Grand Prix Racing Online: tyres, setup, fuel and upgrades." } },
+      { "@type": "ListItem", "position": 9, "item": { "@type": "SoftwareApplication", "name": "TM Advisor", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Web", "url": "https://github.com/Jadax/tm-advisor", "description": "A free, open-source Tampermonkey assistant for TrophyManager with Best XI, mentality and set-piece calls." } },
+      { "@type": "ListItem", "position": 10, "item": { "@type": "SoftwareApplication", "name": "FTP Advisor", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Web", "url": "https://github.com/Jadax/ftp-advisor", "description": "A free, open-source Tampermonkey assistant for From The Pavilion covering toss calls, training and transfers." } }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "What is Astraiva?", "acceptedAnswer": { "@type": "Answer", "text": "Astraiva is an independent studio founded by Tushant Sharma that designs, builds and ships games, learning apps and practical tools — including Crown of Scars, Stumped!, LinguaTomo, VibeGaffer and more. Everything is built by hand, offline-first and privacy-first." } },
+      { "@type": "Question", "name": "Who is the founder of Astraiva?", "acceptedAnswer": { "@type": "Answer", "text": "Astraiva was founded by Tushant Sharma, an independent developer and designer. He builds every product in the catalogue — from games in Godot 4 to Flutter apps like LinguaTomo to single-file browser tools." } },
+      { "@type": "Question", "name": "Is LinguaTomo free?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. LinguaTomo is completely free with no ads and no paywalls. It's an offline-first Japanese learning app covering 1,800+ words across CEFR and JLPT tiers, with grammar, handwriting practice and spaced repetition. You can try the live web version from the Astraiva website." } },
+      { "@type": "Question", "name": "What is Crown of Scars?", "acceptedAnswer": { "@type": "Answer", "text": "Crown of Scars is Astraiva's flagship game — a kingdom-building deck roguelike with 210 cards, five bosses and branching story events that remember how you fight. It is currently in development in Godot 4 for Windows." } },
+      { "@type": "Question", "name": "Are Astraiva's tools really free and private?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Tools like VibeGaffer, TM Advisor and FTP Advisor are free and open source, run locally on your device, and collect no data. Astraiva runs no servers that hold user data, sells no ads and shares no information." } },
+      { "@type": "Question", "name": "How can I contact Astraiva?", "acceptedAnswer": { "@type": "Answer", "text": "Email astraiva.apps@gmail.com — you'll reach the founder directly." } }
+    ]
+  }
+  </script>
+
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script>
+    try {
+      var t = localStorage.getItem("astraiva-theme");
+      if (!t) t = window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+      document.documentElement.setAttribute("data-theme", t);
+    } catch (e) {}
+  </script>
+</head>
+<body>
+
+  <a class="skip-link" href="#work">Skip to content</a>
+
+  <header class="site-header" id="top">
+    <nav class="nav container" aria-label="Primary">
+      <a class="brand" href="#top" aria-label="Astraiva — home">
+        <img class="brand-logo" src="assets/img/astraiva-logo-black.png" alt="Astraiva" width="164" height="30" fetchpriority="high">
+      </a>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#work">Work</a></li>
+        <li><a href="#tools">Tools</a></li>
+        <li><a href="#studio">Studio</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle theme" aria-pressed="false">
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4.5"/>
+            <path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5 5l1.4 1.4M17.6 17.6L19 19M19 5l-1.4 1.4M6.4 17.6L5 19"/>
+          </svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M20 13.5A8 8 0 0 1 10.5 4 7.5 7.5 0 1 0 20 13.5Z"/>
+          </svg>
+        </button>
+        <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <div class="stars" id="stars" aria-hidden="true"></div>
+      <div class="container hero-inner">
+        <p class="eyebrow" data-reveal>Independent game studio · Founded by Tushant Sharma</p>
+        <h1 class="hero-title" data-reveal>We build things<br>people love to use.</h1>
+        <p class="hero-sub" data-reveal>
+          Astraiva is an independent studio that ships games, learning apps and practical
+          tools — designed with care, engineered to last, and finished to a standard
+          you'd expect from a much larger team.
+        </p>
+        <div class="hero-cta" data-reveal>
+          <a class="btn btn-primary" href="#work">Explore the work
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+          </a>
+          <a class="btn btn-ghost" href="mailto:astraiva.apps@gmail.com">Get in touch</a>
+        </div>
+      </div>
+      <div class="marquee" aria-hidden="true">
+        <div class="marquee-track" id="marquee-track"></div>
+      </div>
+    </section>
+
+    <!-- ============ FEATURED WORK ============ -->
+    <section class="section" id="work">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <p class="section-label">01 · Featured work</p>
+          <h2 class="section-title">Games &amp; apps we're proud of</h2>
+        </div>
+
+        <article class="featured-card" data-reveal>
+          <button class="featured-media" type="button" data-product="crown-of-scars" aria-haspopup="dialog" aria-label="Crown of Scars — view details">
+            <img src="assets/img/crown-of-scars.jpg" alt="Crown of Scars — a dark kingdom-building deck roguelike" width="1280" height="720" loading="lazy">
+            <span class="qm-hint"><span>Quick view</span></span>
+          </button>
+          <div class="featured-body">
+            <div class="card-topline">
+              <h3 class="card-title">Crown of Scars</h3>
+              <span class="badge badge-dev">In development</span>
+            </div>
+            <p class="card-tag">A kingdom-building deck roguelike written in blood and ink.</p>
+            <p class="card-desc">
+              Build a reign from the ruins of a scarred world. Court the kingdom, marshal your cards
+              in battle, and survive branching story events that remember how you fight. 210 cards,
+              five bosses, and a hand-crafted Scarred Ink art style. Built in Godot 4.
+            </p>
+            <div class="chips">
+              <span class="chip">Godot 4</span>
+              <span class="chip">Windows</span>
+              <span class="chip">Deckbuilder</span>
+              <span class="chip">Roguelike</span>
+            </div>
+            <button class="quick-view" type="button" data-product="crown-of-scars" aria-haspopup="dialog">Details
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+            </button>
+          </div>
+        </article>
+
+        <div class="featured-grid">
+          <article class="featured-card" data-reveal>
+            <button class="featured-media" type="button" data-product="stumped" aria-haspopup="dialog" aria-label="Stumped! — view details">
+              <img src="assets/img/stumped-match.jpg" alt="Stumped! — a live match in the cricket management simulation" width="1280" height="720" loading="lazy">
+              <span class="qm-hint"><span>Quick view</span></span>
+            </button>
+            <div class="featured-body">
+              <div class="card-topline">
+                <h3 class="card-title">Stumped!</h3>
+                <span class="badge badge-dev">In development</span>
+              </div>
+              <p class="card-tag">The cricket management sim that puts you in the dugout.</p>
+              <p class="card-desc">
+                Run the club from the boardroom to the final over — transfers, training, tactics,
+                finances and the media circus. A deep, faithful cricket management simulation for PC.
+              </p>
+              <div class="chips">
+                <span class="chip">Windows</span>
+                <span class="chip">Management sim</span>
+              </div>
+              <button class="quick-view" type="button" data-product="stumped" aria-haspopup="dialog">Details
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+              </button>
+            </div>
+          </article>
+
+          <article class="featured-card" data-reveal>
+            <a class="featured-media" href="https://jadax.github.io/LinguaTomo-Web/" target="_blank" rel="noopener" aria-label="LinguaTomo — open the live app">
+              <img src="assets/img/linguatomo-art.webp" alt="LinguaTomo — learn Japanese with Leo" width="1280" height="720" loading="lazy">
+            </a>
+            <div class="featured-body">
+              <div class="card-topline">
+                <h3 class="card-title">LinguaTomo</h3>
+                <span class="badge badge-live">Live · Free</span>
+              </div>
+              <p class="card-tag">Learn Japanese with Leo. Warm, free, and built to work.</p>
+              <p class="card-desc">
+                An offline-first Japanese companion from your first kana to advanced study. 1,800+ words
+                across CEFR &amp; JLPT tiers, grammar, handwriting practice, spaced repetition and seasonal
+                stories — no ads, no paywalls.
+              </p>
+              <div class="chips">
+                <span class="chip">Flutter</span>
+                <span class="chip">Web</span>
+                <span class="chip">Android</span>
+                <span class="chip">iOS</span>
+              </div>
+              <div class="card-links">
+                <a href="https://jadax.github.io/LinguaTomo-Web/" target="_blank" rel="noopener">Try the live app <span aria-hidden="true">→</span></a>
+                <a href="https://github.com/Jadax/LinguaTomo" target="_blank" rel="noopener">Source <span aria-hidden="true">↗</span></a>
+              </div>
+              <button class="quick-view" type="button" data-product="linguatomo" aria-haspopup="dialog">Details
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+              </button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TOOLS & PLATFORMS ============ -->
+    <section class="section" id="tools">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <p class="section-label">02 · Tools &amp; platforms</p>
+          <h2 class="section-title">Practical tools, seriously engineered</h2>
+        </div>
+
+        <div class="tool-grid">
+          <article class="tool-card" data-reveal>
+            <div class="tool-tile tile-vibegaffer" aria-hidden="true">
+              <span class="tool-mono">VG</span>
+              <span class="tool-tile-label">Web · Free</span>
+            </div>
+            <div class="tool-body">
+              <h3 class="card-title">VibeGaffer</h3>
+              <p class="card-tag">Your Fantasy Premier League race engineer.</p>
+              <p class="card-desc">
+                Optimizes 15-player squads with an ILP solver, projects expected points from a
+                multi-signal model, and plans transfers, chips and captains weeks ahead.
+              </p>
+              <div class="card-links">
+                <a href="https://jadax.github.io/VibeGaffer/" target="_blank" rel="noopener">Live app <span aria-hidden="true">↗</span></a>
+                <a href="https://github.com/Jadax/VibeGaffer" target="_blank" rel="noopener">GitHub <span aria-hidden="true">↗</span></a>
+              </div>
+              <button class="quick-view" type="button" data-product="vibegaffer" aria-haspopup="dialog">Details
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+              </button>
+            </div>
+          </article>
+
+          <article class="tool-card" data-reveal>
+            <div class="tool-tile tile-thetaforge" aria-hidden="true">
+              <span class="tool-mono">TF</span>
+              <span class="tool-tile-label">Personal · Private</span>
+            </div>
+            <div class="tool-body">
+              <h3 class="card-title">ThetaForge</h3>
+              <p class="card-tag">Paper-first options trading intelligence.</p>
+              <p class="card-desc">
+                A 12-agent research brain that scans markets, weighs volatility, flow and sentiment,
+                and only ever proposes trades it can prove — paper execution only.
+              </p>
+              <button class="quick-view" type="button" data-product="thetaforge" aria-haspopup="dialog">Details
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+              </button>
+            </div>
+          </article>
+
+          <article class="tool-card" data-reveal>
+            <div class="tool-tile tile-horizonai" aria-hidden="true">
+              <span class="tool-mono">HA</span>
+              <span class="tool-tile-label">Personal · Open source</span>
+            </div>
+            <div class="tool-body">
+              <h3 class="card-title">HorizonAI</h3>
+              <p class="card-tag">An autonomous vertical-video factory.</p>
+              <p class="card-desc">
+                Harvests trends, writes and scores scripts, sources b-roll, synthesizes voiceover and
+                publishes captioned shorts to YouTube — at zero marginal cost per video.
+              </p>
+              <div class="card-links">
+                <a href="https://github.com/Jadax/horizon-ai" target="_blank" rel="noopener">GitHub <span aria-hidden="true">↗</span></a>
+              </div>
+              <button class="quick-view" type="button" data-product="horizonai" aria-haspopup="dialog">Details
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+              </button>
+            </div>
+          </article>
+
+          <article class="tool-card" data-reveal>
+            <div class="tool-tile tile-rovyniq" aria-hidden="true">
+              <span class="tool-mono">RV</span>
+              <span class="tool-tile-label">In development · Private</span>
+            </div>
+            <div class="tool-body">
+              <h3 class="card-title">Rovyniq</h3>
+              <p class="card-tag">Evidence-led tax preparation for South Africa's ITR12.</p>
+              <p class="card-desc">
+                Canonical tax modelling, year-versioned rules and deterministic calculations — built so
+                every number can be traced back to the law it comes from.
+              </p>
+              <button class="quick-view" type="button" data-product="rovyniq" aria-haspopup="dialog">Details
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+              </button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ BROWSER TOOLS ============ -->
+    <section class="section" id="browser-tools">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <p class="section-label">03 · Browser tools</p>
+          <h2 class="section-title">Tiny tools that punch above their weight</h2>
+          <p class="section-sub">Single-file Tampermonkey scripts that turn numbers-heavy games into clear decisions. Free, open source, and completely local.</p>
+        </div>
+
+        <div class="browser-list">
+          <article class="browser-card" data-reveal>
+            <div class="browser-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16M4 12l4-4M4 12l4 4M20 12l-4-4M20 12l-4 4"/></svg>
+            </div>
+            <div class="browser-body">
+              <div class="card-topline">
+                <h3 class="card-title">GPRO Strategy Tool</h3>
+                <span class="badge badge-free">Free · Open source</span>
+              </div>
+              <p class="card-tag">Your personal race engineer for Grand Prix Racing Online.</p>
+              <p class="card-desc">Tyre strategy, car setup, fuel loads and upgrades — a floating race engineer on every page, without burning through your API budget.</p>
+            </div>
+            <div class="browser-tags">
+              <span class="chip">Tampermonkey</span>
+              <button class="quick-view quick-view-sm" type="button" data-product="gpro" aria-haspopup="dialog">Details
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+              </button>
+            </div>
+          </article>
+
+          <article class="browser-card" data-reveal>
+            <div class="browser-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+            </div>
+            <div class="browser-body">
+              <div class="card-topline">
+                <h3 class="card-title">TM Advisor</h3>
+                <span class="badge badge-free">Free · Open source</span>
+              </div>
+              <p class="card-tag">A smarter way to play TrophyManager.</p>
+              <p class="card-desc">Best XI, mentality and set-piece calls from the trusted R5 engine, plus youth scouting and stadium ROI — inline in the game.</p>
+            </div>
+            <div class="browser-tags">
+              <span class="chip">Tampermonkey</span>
+              <a class="text-link" href="https://github.com/Jadax/tm-advisor" target="_blank" rel="noopener">GitHub <span aria-hidden="true">↗</span></a>
+              <a class="text-link" href="https://raw.githubusercontent.com/Jadax/tm-advisor/main/TM_Advisor.js" target="_blank" rel="noopener">Install <span aria-hidden="true">↗</span></a>
+              <button class="quick-view quick-view-sm" type="button" data-product="tm-advisor" aria-haspopup="dialog">Details
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+              </button>
+            </div>
+          </article>
+
+          <article class="browser-card" data-reveal>
+            <div class="browser-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3l12 18M18 3L6 21"/></svg>
+            </div>
+            <div class="browser-body">
+              <div class="card-topline">
+                <h3 class="card-title">FTP Advisor</h3>
+                <span class="badge badge-free">Free · Open source</span>
+              </div>
+              <p class="card-tag">Turn From The Pavilion into a game of decisions.</p>
+              <p class="card-desc">Toss calls, training plans, transfer values and youth scouting backed by actual numbers instead of gut feel.</p>
+            </div>
+            <div class="browser-tags">
+              <span class="chip">Tampermonkey</span>
+              <a class="text-link" href="https://github.com/Jadax/ftp-advisor" target="_blank" rel="noopener">GitHub <span aria-hidden="true">↗</span></a>
+              <a class="text-link" href="https://raw.githubusercontent.com/Jadax/ftp-advisor/main/ftp-advisor_user.js" target="_blank" rel="noopener">Install <span aria-hidden="true">↗</span></a>
+              <button class="quick-view quick-view-sm" type="button" data-product="ftp-advisor" aria-haspopup="dialog">Details
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+              </button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ STUDIO ============ -->
+    <section class="section" id="studio">
+      <div class="container studio-grid">
+        <div class="studio-intro" data-reveal>
+          <p class="section-label">04 · The studio</p>
+          <h2 class="section-title">Small studio.<br>Serious polish.</h2>
+          <p class="section-sub">
+            Astraiva was founded by <strong>Tushant Sharma</strong> with a simple belief: software that feels
+            handmade is software worth keeping. Every product here is designed, built and shipped by a
+            small team that behaves like a big one.
+          </p>
+          <div class="studio-contact">
+            <a class="btn btn-primary" href="mailto:astraiva.apps@gmail.com">astraiva.apps@gmail.com
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <a class="btn btn-ghost" href="https://github.com/Jadax" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </div>
+        <div class="studio-values" data-reveal>
+          <div class="value">
+            <span class="value-num">01</span>
+            <h3>Crafted, not templated</h3>
+            <p>Every screen is designed by hand and cared for long after launch.</p>
+          </div>
+          <div class="value">
+            <span class="value-num">02</span>
+            <h3>Offline-first, privacy-first</h3>
+            <p>Your data belongs to you. Local when it can be, private when it can't.</p>
+          </div>
+          <div class="value">
+            <span class="value-num">03</span>
+            <h3>Free when it should be</h3>
+            <p>Good tools shouldn't be locked behind paywalls. When we charge, it's for the product — never the ads.</p>
+          </div>
+          <div class="value">
+            <span class="value-num">04</span>
+            <h3>No shortcuts</h3>
+            <p>Tests, quality gates and honest docs. We ship things we're proud to put our name on.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FAQ ============ -->
+    <section class="section section-faq" id="faq">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <p class="section-label">05 · Questions</p>
+          <h2 class="section-title">Answers, straight from the studio</h2>
+        </div>
+        <div class="faq-list" id="faq-list">
+          <div class="faq-item" data-reveal>
+            <button class="faq-q" type="button" aria-expanded="false">
+              <span>What is Astraiva?</span>
+              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq-a"><p>Astraiva is an independent studio founded by Tushant Sharma that designs, builds and ships games, learning apps and practical tools — including Crown of Scars, Stumped!, LinguaTomo, VibeGaffer and more. Everything is built by hand, offline-first and privacy-first.</p></div>
+          </div>
+          <div class="faq-item" data-reveal>
+            <button class="faq-q" type="button" aria-expanded="false">
+              <span>Who is the founder of Astraiva?</span>
+              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq-a"><p>Astraiva was founded by Tushant Sharma, an independent developer and designer. He builds every product in the catalogue — from games in Godot 4 to Flutter apps like LinguaTomo to single-file browser tools.</p></div>
+          </div>
+          <div class="faq-item" data-reveal>
+            <button class="faq-q" type="button" aria-expanded="false">
+              <span>Is LinguaTomo free?</span>
+              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq-a"><p>Yes. LinguaTomo is completely free with no ads and no paywalls. It's an offline-first Japanese learning app covering 1,800+ words across CEFR &amp; JLPT tiers, with grammar, handwriting practice and spaced repetition. You can try the live web version right from this site.</p></div>
+          </div>
+          <div class="faq-item" data-reveal>
+            <button class="faq-q" type="button" aria-expanded="false">
+              <span>What is Crown of Scars?</span>
+              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq-a"><p>Crown of Scars is Astraiva's flagship game — a kingdom-building deck roguelike with 210 cards, five bosses and branching story events that remember how you fight. It is currently in development in Godot 4 for Windows.</p></div>
+          </div>
+          <div class="faq-item" data-reveal>
+            <button class="faq-q" type="button" aria-expanded="false">
+              <span>Are Astraiva's tools really free and private?</span>
+              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq-a"><p>Yes. Tools like VibeGaffer, TM Advisor and FTP Advisor are free and open source, run locally on your device, and collect no data. Astraiva runs no servers that hold user data, sells no ads and shares no information.</p></div>
+          </div>
+          <div class="faq-item" data-reveal>
+            <button class="faq-q" type="button" aria-expanded="false">
+              <span>How can I contact Astraiva?</span>
+              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq-a"><p>Email <a class="text-link" href="mailto:astraiva.apps@gmail.com">astraiva.apps@gmail.com</a> — you'll reach the founder directly.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="section section-contact" id="contact">
+      <div class="container contact-inner" data-reveal>
+        <h2 class="contact-title">Let's build something<br>worth shipping.</h2>
+        <p class="contact-sub">Product idea, feedback, or partnership — the inbox is open.</p>
+        <div class="contact-actions">
+          <a class="btn btn-primary btn-lg" href="mailto:astraiva.apps@gmail.com">
+            Email Astraiva
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <img class="brand-logo brand-logo-sm" src="assets/img/astraiva-logo-black.png" alt="Astraiva" width="120" height="22">
+      </div>
+      <p class="footer-copy">© <span id="year">2026</span> Astraiva. Built by Tushant Sharma. Made by hand — no templates.</p>
+      <ul class="footer-links">
+        <li><a href="https://github.com/Jadax" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="https://ko-fi.com/jadax" target="_blank" rel="noopener">Ko-fi</a></li>
+        <li><a href="privacy.html">Privacy</a></li>
+        <li><a href="#top">Back to top <span aria-hidden="true">↑</span></a></li>
+      </ul>
+    </div>
+    <p class="footer-note">Product names referenced belong to their respective owners and are used for identification only.</p>
+  </footer>
+
+  <dialog class="quick-modal" id="quick-modal" aria-labelledby="qm-title">
+    <div class="qm-wrap">
+      <div class="qm-head">
+        <div>
+          <p class="qm-kicker" id="qm-kicker"></p>
+          <h2 class="qm-title" id="qm-title"></h2>
+          <div class="qm-badge" id="qm-badge"></div>
+        </div>
+        <button class="qm-close" id="qm-close" type="button" aria-label="Close details">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+        </button>
+      </div>
+      <div class="qm-media" id="qm-media"></div>
+      <div class="qm-content">
+        <p class="qm-tag" id="qm-tag"></p>
+        <p class="qm-desc" id="qm-desc"></p>
+        <ul class="qm-features" id="qm-features"></ul>
+        <div class="chips" id="qm-chips"></div>
+        <div class="card-links" id="qm-links"></div>
+      </div>
+    </div>
+  </dialog>
+
+  <script type="application/json" id="product-data">
+  {
+    "crown-of-scars": {
+      "kicker": "Game · Godot 4",
+      "name": "Crown of Scars",
+      "status": "dev",
+      "statusLabel": "In development",
+      "tagline": "A kingdom-building deck roguelike written in blood and ink.",
+      "long": "Build a reign from the ruins of a scarred world. Court the kingdom, marshal your cards in battle, and survive branching story events that remember every choice you make. 210 cards, five bosses that adapt to your playstyle, and a hand-crafted Scarred Ink art style. Built in Godot 4 for Windows.",
+      "features": [
+        "210-card deck with deep synergy between the four court factions",
+        "Five hand-designed bosses that adapt to the way you fight",
+        "Branching story events with memory — the world remembers you",
+        "Hand-crafted Scarred Ink art style, built pixel by pixel",
+        "Native Godot 4 engine with a Windows build"
+      ],
+      "chips": ["Godot 4", "Windows", "Deckbuilder", "Roguelike"],
+      "media": [
+        { "src": "crown-of-scars.jpg", "alt": "Crown of Scars — a dark kingdom-building deck roguelike" },
+        { "src": "crown-of-scars-battle.jpg", "alt": "Crown of Scars — battle in the Scarred Ink art style" }
+      ],
+      "links": []
+    },
+    "stumped": {
+      "kicker": "Game · PC",
+      "name": "Stumped!",
+      "status": "dev",
+      "statusLabel": "In development",
+      "tagline": "The cricket management sim that puts you in the dugout.",
+      "long": "Run the club from the boardroom to the final over — transfers, training, tactics, finances and the media circus. Every selection, auction bid and bowl change has a consequence, and the match engine turns each ball into a real decision.",
+      "features": [
+        "Full club management: transfers, training, tactics and finances",
+        "Ball-by-ball match engine with real decision points",
+        "Media and board pressure systems that test your nerve",
+        "Deep player development and statistics",
+        "Faithful, authentic cricket simulation for PC"
+      ],
+      "chips": ["Windows", "Management sim"],
+      "media": [
+        { "src": "stumped-match.jpg", "alt": "Stumped! — a live match in the cricket management simulation" },
+        { "src": "stumped-dashboard.jpg", "alt": "Stumped! — the club management dashboard" },
+        { "src": "stumped-squad.jpg", "alt": "Stumped! — squad and selection screen" }
+      ],
+      "links": []
+    },
+    "linguatomo": {
+      "kicker": "App · Flutter",
+      "name": "LinguaTomo",
+      "status": "live",
+      "statusLabel": "Live · Free",
+      "tagline": "Learn Japanese with Leo. Warm, free, and built to work.",
+      "long": "An offline-first Japanese companion from your first kana to advanced study. 1,800+ words across CEFR & JLPT tiers, grammar, handwriting practice, spaced repetition and seasonal stories. No ads, no paywalls, and your progress never leaves your device.",
+      "features": [
+        "1,800+ words organised across CEFR & JLPT tiers",
+        "Grammar, handwriting and reading practice in one place",
+        "Spaced repetition that adapts to what you actually forget",
+        "Seasonal stories starring the Leo mascot",
+        "Offline-first — works without an internet connection"
+      ],
+      "chips": ["Flutter", "Web", "Android", "iOS"],
+      "media": [
+        { "src": "linguatomo-art.webp", "alt": "LinguaTomo — learn Japanese with Leo" }
+      ],
+      "links": [
+        { "label": "Try the live app", "href": "https://jadax.github.io/LinguaTomo-Web/" },
+        { "label": "Source", "href": "https://github.com/Jadax/LinguaTomo" }
+      ]
+    },
+    "vibegaffer": {
+      "kicker": "Tool · Web",
+      "name": "VibeGaffer",
+      "status": "live",
+      "statusLabel": "Web · Free",
+      "tagline": "Your Fantasy Premier League race engineer.",
+      "long": "Optimizes 15-player squads with an ILP solver, projects expected points from a multi-signal model, and plans transfers, chips and captains weeks ahead. Runs entirely in your browser — your squad data never leaves your machine.",
+      "features": [
+        "ILP solver finds genuinely optimal 15-player squads",
+        "Multi-signal expected-points projection model",
+        "Transfer, chip and captain planning weeks ahead",
+        "Runs entirely in the browser — no account, no server"
+      ],
+      "chips": ["Web", "Free", "Open source"],
+      "media": [],
+      "links": [
+        { "label": "Live app", "href": "https://jadax.github.io/VibeGaffer/" },
+        { "label": "GitHub", "href": "https://github.com/Jadax/VibeGaffer" }
+      ]
+    },
+    "thetaforge": {
+      "kicker": "Tool · Personal",
+      "name": "ThetaForge",
+      "status": "private",
+      "statusLabel": "Personal · Private",
+      "tagline": "Paper-first options trading intelligence.",
+      "long": "A 12-agent research brain that scans markets, weighs volatility, flow and sentiment, and only ever proposes trades it can prove — paper execution only. Built for personal use, with evidence behind every position.",
+      "features": [
+        "12-agent research pipeline across markets and sentiment",
+        "Volatility, flow and sentiment analysis in one view",
+        "Evidence-gated trade proposals — nothing it can't prove",
+        "Paper execution only — no real capital at risk"
+      ],
+      "chips": ["Private", "Paper trading"],
+      "media": [],
+      "links": []
+    },
+    "horizonai": {
+      "kicker": "Tool · Automation",
+      "name": "HorizonAI",
+      "status": "private",
+      "statusLabel": "Open source",
+      "tagline": "An autonomous vertical-video factory.",
+      "long": "Harvests trends, writes and scores scripts, sources b-roll, synthesizes voiceover and publishes captioned shorts to YouTube — at zero marginal cost per video. Fully open source and run by you, on your own credentials.",
+      "features": [
+        "Trend harvesting with automated scoring",
+        "Scriptwriting pipeline tuned for short-form video",
+        "Voiceover synthesis and automatic captioning",
+        "Direct publish to YouTube, fully autonomous"
+      ],
+      "chips": ["Open source", "Automation"],
+      "media": [],
+      "links": [
+        { "label": "GitHub", "href": "https://github.com/Jadax/horizon-ai" }
+      ]
+    },
+    "rovyniq": {
+      "kicker": "Tool · Finance",
+      "name": "Rovyniq",
+      "status": "dev",
+      "statusLabel": "In development · Private",
+      "tagline": "Evidence-led tax preparation for South Africa's ITR12.",
+      "long": "Canonical tax modelling, year-versioned rules and deterministic calculations — built so every number can be traced back to the law it comes from. Private while it's being validated against the real world.",
+      "features": [
+        "Canonical tax modelling with a single source of truth",
+        "Year-versioned rule sets that track changing law",
+        "Deterministic calculations — every number traceable",
+        "Purpose-built for South Africa's ITR12"
+      ],
+      "chips": ["Private", "Tax", "South Africa"],
+      "media": [],
+      "links": []
+    },
+    "gpro": {
+      "kicker": "Browser script · Tampermonkey",
+      "name": "GPRO Strategy Tool",
+      "status": "free",
+      "statusLabel": "Free · Open source",
+      "tagline": "Your personal race engineer for Grand Prix Racing Online.",
+      "long": "Tyre strategy, car setup, fuel loads and upgrades — a floating race engineer on every page, without burning through your API budget. Installs as a single Tampermonkey script and runs completely locally.",
+      "features": [
+        "Tyre and pit strategy guidance",
+        "Car setup recommendations",
+        "Fuel load planning",
+        "Upgrade prioritisation",
+        "Runs locally — nothing leaves your browser"
+      ],
+      "chips": ["Tampermonkey", "Free"],
+      "media": [],
+      "links": []
+    },
+    "tm-advisor": {
+      "kicker": "Browser script · Tampermonkey",
+      "name": "TM Advisor",
+      "status": "free",
+      "statusLabel": "Free · Open source",
+      "tagline": "A smarter way to play TrophyManager.",
+      "long": "Best XI, mentality and set-piece calls from the trusted R5 engine, plus youth scouting and stadium ROI — inline in the game. A single-file Tampermonkey script that stays entirely on your machine.",
+      "features": [
+        "Best XI selection powered by the R5 engine",
+        "Mentality and set-piece recommendations",
+        "Youth scouting support",
+        "Stadium ROI analysis",
+        "Single-file install, fully local"
+      ],
+      "chips": ["Tampermonkey", "Free"],
+      "media": [],
+      "links": [
+        { "label": "GitHub", "href": "https://github.com/Jadax/tm-advisor" },
+        { "label": "Install", "href": "https://raw.githubusercontent.com/Jadax/tm-advisor/main/TM_Advisor.js" }
+      ]
+    },
+    "ftp-advisor": {
+      "kicker": "Browser script · Tampermonkey",
+      "name": "FTP Advisor",
+      "status": "free",
+      "statusLabel": "Free · Open source",
+      "tagline": "Turn From The Pavilion into a game of decisions.",
+      "long": "Toss calls, training plans, transfer values and youth scouting backed by actual numbers instead of gut feel. A single-file Tampermonkey script that runs locally and sends nothing anywhere.",
+      "features": [
+        "Toss decision support",
+        "Training plan optimisation",
+        "Transfer value estimation",
+        "Youth scouting guidance",
+        "Single-file install, fully local"
+      ],
+      "chips": ["Tampermonkey", "Free"],
+      "media": [],
+      "links": [
+        { "label": "GitHub", "href": "https://github.com/Jadax/ftp-advisor" },
+        { "label": "Install", "href": "https://raw.githubusercontent.com/Jadax/ftp-advisor/main/ftp-advisor_user.js" }
+      ]
+    }
+  }
+  </script>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

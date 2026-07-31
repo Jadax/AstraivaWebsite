@@ -1,0 +1,9 @@
+# OS / editor junk
+.DS_Store
+Thumbs.db
+
+# Browser test snapshots
+.playwright-mcp/
+
+# Local server logs
+*.log
