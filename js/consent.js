@@ -1,4 +1,4 @@
-/* Consent-first analytics loader (Google Analytics + Microsoft Clarity).
+﻿/* Consent-first analytics loader (Google Analytics + Microsoft Clarity).
    Trackers only load after the visitor accepts; refusing never loads them.
    Consent choice is remembered in localStorage (essential, device-local). */
 (function () {
@@ -15,6 +15,11 @@
   function write(state) {
     try { localStorage.setItem(KEY, state); } catch (e) {}
   }
+
+  window.astraivaResetConsent = function () {
+    try { localStorage.removeItem(KEY); } catch (e) {}
+    window.location.reload();
+  };
 
   function prefix() {
     var depth = location.pathname.split("/").filter(Boolean).length;
@@ -67,10 +72,11 @@
   banner.className = "consent-banner hidden";
   banner.setAttribute("role", "dialog");
   banner.setAttribute("aria-label", "Cookie consent");
+  banner.setAttribute("aria-modal", "false");
   banner.setAttribute("aria-live", "polite");
   banner.innerHTML =
     '<div class="consent-banner-inner">' +
-      '<p class="consent-banner-text"><strong>One thing to know:</strong> we use Google Analytics and Microsoft Clarity to see which pages are useful and how you use the site — anonymous visitor stats and session insights only. They only run if you accept. Your theme preference stays on your device.</p>' +
+      '<p class="consent-banner-text"><strong>One thing to know:</strong> we use Google Analytics and Microsoft Clarity to see which pages are useful and how you use the site, anonymous visitor stats and session insights only. They only run if you accept. Your theme preference stays on your device.</p>' +
       '<div class="consent-banner-actions">' +
         '<a class="consent-banner-link" href="' + prefix() + 'privacy.html">Privacy policy</a>' +
         '<button class="btn btn-ghost" type="button" id="astraiva-consent-decline">Decline</button>' +

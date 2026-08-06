@@ -1,0 +1,4 @@
+Contact: mailto:astraiva.apps@gmail.com
+Canonical: https://astraiva.app/.well-known/security.txt
+Policy: https://astraiva.app/terms.html
+Preferred-Languages: en

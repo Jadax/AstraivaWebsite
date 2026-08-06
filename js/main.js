@@ -1,5 +1,5 @@
-/* ==========================================================================
-   Astraiva — site interactions
+﻿/* ==========================================================================
+   Astraiva, site interactions
    ========================================================================== */
 (function () {
   "use strict";
@@ -179,7 +179,7 @@
       qm.features.innerHTML = p.features.map(function (f) { return "<li>" + f + "</li>"; }).join("");
       qm.chips.innerHTML = p.chips.map(function (c) { return "<span class=\"chip\">" + c + "</span>"; }).join("");
       qm.links.innerHTML = p.links.map(function (l) {
-        return "<a href=\"" + l.href + "\" target=\"_blank\" rel=\"noopener\">" + l.label + " <span aria-hidden=\"true\">↗</span></a>";
+        return "<a href=\"" + l.href + "\" target=\"_blank\" rel=\"noopener\">" + l.label + " <span aria-hidden=\"true\">→ </span></a>";
       }).join("");
       qm.media.innerHTML = p.media.map(function (m) {
         return "<figure class=\"qm-shot\"><img src=\"assets/img/" + m.src + "\" alt=\"" + m.alt + "\" width=\"1280\" height=\"720\" loading=\"lazy\"></figure>";
