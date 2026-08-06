@@ -1339,6 +1339,13 @@ button.featured-media {
   max-width: 580px;
 }
 
+.legal-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
 .legal-meta {
   display: flex;
   gap: 22px;

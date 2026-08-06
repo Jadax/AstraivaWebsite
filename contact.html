@@ -166,6 +166,7 @@
             <input type="hidden" name="access_key" value="e728db5f-c2b2-48e6-ba89-4d1ed6a1eb48">
             <input type="hidden" name="subject" value="New message from the Astraiva website">
             <input type="hidden" name="from_name" value="Astraiva website">
+            <input type="hidden" name="redirect" value="https://astraiva.app/thank-you.html">
             <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display: none;">
             <div class="form-row">
               <div>
@@ -235,7 +236,7 @@
           throw new Error("The form service returned an error.");
         }
         form.reset();
-        status.textContent = "Thanks. Your message has been sent.";
+        window.location.href = "thank-you.html";
       } catch (error) {
         status.textContent = "We could not send your message. Please email astraiva.apps@gmail.com directly.";
       } finally {
