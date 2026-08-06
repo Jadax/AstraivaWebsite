@@ -3,16 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZN6JMVQ74L"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-ZN6JMVQ74L');
-  </script>
-
+  
   <title>Privacy Policy — Astraiva</title>
   <meta name="description" content="How Astraiva handles your data. The short version: we don't collect any. No accounts, no tracking, no ads — your data stays on your device.">
   <meta name="author" content="Astraiva — Tushant Sharma">
@@ -62,9 +53,7 @@
 
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/fonts.css">
   <link rel="stylesheet" href="css/style.css">
   <script>
     try {
@@ -73,6 +62,7 @@
       document.documentElement.setAttribute("data-theme", t);
     } catch (e) {}
   </script>
+  <script src="js/consent.js" defer></script>
 </head>
 <body>
 
@@ -193,16 +183,18 @@
           <ul>
             <li>
               We use <strong>Google Analytics</strong> to understand how many people visit astraiva.app
-              and which pages are most useful. It records aggregate, anonymised statistics — such as
-              pages visited and the visitor's general region — and sets cookies like <strong>_ga</strong>
-              and <strong>_ga_*</strong>. We can't see who you are, and we don't use it to build
-              profiles. You can opt out with the
+              and which pages are most useful — but <strong>only after you accept</strong> on the
+              consent banner shown when you first visit. If you decline, no analytics script is
+              loaded at all. It records aggregate, anonymised statistics — such as pages visited and
+              the visitor's general region — and sets cookies like <strong>_ga</strong> and
+              <strong>_ga_*</strong>. We can't see who you are, and we don't use it to build
+              profiles. You can change your mind later via the
               <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener">Google Analytics opt-out</a>
-              or by blocking cookies in your browser.
+              or by clearing your browser's cookies.
             </li>
-            <li>Your theme preference (dark/light) is remembered locally in your browser's storage.</li>
-            <li>Fonts load from Google Fonts, which may log your IP address under Google's
-              <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">privacy policy</a>.</li>
+            <li>Your theme preference (dark/light) and consent choice are remembered locally in your
+              browser's storage — this is essential and never leaves your device.</li>
+            <li>Fonts are self-hosted on our own server, so no third party sees your IP when pages load.</li>
             <li>Like any site, our hosting provider keeps standard server access logs
               (such as IP address and requested page) for security and reliability. We don't use
               them to identify you.</li>
@@ -218,7 +210,7 @@
             <li><strong>App stores</strong> — Google Play, the App Store and Steam distribute our apps. Your store account and purchase details are handled by those platforms.</li>
             <li><strong>GitHub</strong> — hosts our open-source code and live web versions of some tools.</li>
             <li><strong>Ko-fi</strong> — if you support Astraiva, your payment is processed by Ko-fi/Stripe, not by us.</li>
-            <li><strong>Google Analytics</strong> — measures traffic on this website, as described above.</li>
+            <li><strong>Google Analytics</strong> — measures traffic on this website, but only after you accept on the consent banner, as described above.</li>
           </ul>
 
           <h2 id="children">Children</h2>

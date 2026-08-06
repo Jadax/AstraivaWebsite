@@ -3,16 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZN6JMVQ74L"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-ZN6JMVQ74L');
-  </script>
-
+  
   <title>Astraiva — Indie Game Studio, Apps &amp; Tools | Games, Apps &amp; Tools by Tushant Sharma</title>
   <meta name="description" content="Astraiva is an independent studio founded by Tushant Sharma. Games, learning apps and practical tools — Crown of Scars, Stumped!, LinguaTomo, VibeGaffer, HorizonAI and more. Free, offline-first and privacy-first.">
   <meta name="author" content="Astraiva — Tushant Sharma">
@@ -83,7 +74,7 @@
       { "@type": "Question", "name": "Who is the founder of Astraiva?", "acceptedAnswer": { "@type": "Answer", "text": "Astraiva was founded by Tushant Sharma, an independent developer and designer. He builds every product in the catalogue — from games in Godot 4 to Flutter apps like LinguaTomo to single-file browser tools." } },
       { "@type": "Question", "name": "Is LinguaTomo free?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. LinguaTomo is completely free with no ads and no paywalls. It's an offline-first Japanese learning app covering 1,800+ words across CEFR and JLPT tiers, with grammar, handwriting practice and spaced repetition. You can try the live web version from the Astraiva website." } },
       { "@type": "Question", "name": "What is Crown of Scars?", "acceptedAnswer": { "@type": "Answer", "text": "Crown of Scars is Astraiva's flagship game — a kingdom-building deck roguelike with 210 cards, five bosses and branching story events that remember how you fight. It is currently in development in Godot 4 for Windows." } },
-      { "@type": "Question", "name": "Are Astraiva's tools really free and private?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Tools like VibeGaffer, TM Advisor and FTP Advisor are free and open source, run locally on your device, and collect no data. Astraiva runs no servers that hold your personal data and sells no ads. The website itself uses Google Analytics for anonymous visitor statistics." } },
+      { "@type": "Question", "name": "Are Astraiva's tools really free and private?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Tools like VibeGaffer, TM Advisor and FTP Advisor are free and open source, run locally on your device, and collect no data. Astraiva runs no servers that hold your personal data and sells no ads. The website itself uses Google Analytics for anonymous visitor statistics, only after you give consent." } },
       { "@type": "Question", "name": "How can I contact Astraiva?", "acceptedAnswer": { "@type": "Answer", "text": "Email astraiva.apps@gmail.com — you'll reach the founder directly." } }
     ]
   }
@@ -91,9 +82,7 @@
 
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/fonts.css">
   <link rel="stylesheet" href="css/style.css">
   <script>
     try {
@@ -102,6 +91,7 @@
       document.documentElement.setAttribute("data-theme", t);
     } catch (e) {}
   </script>
+  <script src="js/consent.js" defer></script>
 </head>
 <body>
 
@@ -510,7 +500,7 @@
               <span>Are Astraiva's tools really free and private?</span>
               <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
             </button>
-            <div class="faq-a"><p>Yes. Tools like VibeGaffer, TM Advisor and FTP Advisor are free and open source, run locally on your device, and collect no data. Astraiva runs no servers that hold your personal data and sells no ads. The website itself uses Google Analytics for anonymous visitor statistics.</p></div>
+            <div class="faq-a"><p>Yes. Tools like VibeGaffer, TM Advisor and FTP Advisor are free and open source, run locally on your device, and collect no data. Astraiva runs no servers that hold your personal data and sells no ads. The website itself uses Google Analytics for anonymous visitor statistics, only after you give consent.</p></div>
           </div>
           <div class="faq-item" data-reveal>
             <button class="faq-q" type="button" aria-expanded="false">
