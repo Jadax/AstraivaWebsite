@@ -1,11 +1,12 @@
-/* Consent-first Google Analytics loader.
-   GA only loads after the visitor accepts; refusing never loads it.
+/* Consent-first analytics loader (Google Analytics + Microsoft Clarity).
+   Trackers only load after the visitor accepts; refusing never loads them.
    Consent choice is remembered in localStorage (essential, device-local). */
 (function () {
   "use strict";
 
   var KEY = "astraiva-consent";
   var GA_ID = "G-ZN6JMVQ74L";
+  var CLARITY_ID = "xy2ltqxa1p";
 
   function read() {
     try { return localStorage.getItem(KEY); } catch (e) { return null; }
@@ -20,17 +21,25 @@
     return depth > 1 ? "../".repeat(depth - 1) : "";
   }
 
-  function loadGtag() {
-    if (window.__astraivaGtag) return;
-    window.__astraivaGtag = true;
+  function loadTrackers() {
+    if (window.__astraivaTrackers) return;
+    window.__astraivaTrackers = true;
+
     window.dataLayer = window.dataLayer || [];
     window.gtag = function () { window.dataLayer.push(arguments); };
     window.gtag("js", new Date());
-    var s = document.createElement("script");
-    s.async = true;
-    s.src = "https://www.googletagmanager.com/gtag/js?id=" + GA_ID;
-    document.head.appendChild(s);
+    var g = document.createElement("script");
+    g.async = true;
+    g.src = "https://www.googletagmanager.com/gtag/js?id=" + GA_ID;
+    document.head.appendChild(g);
     window.gtag("config", GA_ID);
+
+    (function (c, l, a, r, i, t, y) {
+      c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments); };
+      t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+      y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+    })(window, document, "clarity", "script", CLARITY_ID);
+    window.clarity("consent", "true");
   }
 
   function dismiss() {
@@ -44,7 +53,7 @@
     b.classList.remove("hidden");
     document.getElementById("astraiva-consent-accept").addEventListener("click", function () {
       write("granted");
-      loadGtag();
+      loadTrackers();
       dismiss();
     });
     document.getElementById("astraiva-consent-decline").addEventListener("click", function () {
@@ -61,7 +70,7 @@
   banner.setAttribute("aria-live", "polite");
   banner.innerHTML =
     '<div class="consent-banner-inner">' +
-      '<p class="consent-banner-text"><strong>One thing to know:</strong> we use Google Analytics to see which pages are useful — anonymous visitor stats only. It only runs if you accept. Your theme preference stays on your device.</p>' +
+      '<p class="consent-banner-text"><strong>One thing to know:</strong> we use Google Analytics and Microsoft Clarity to see which pages are useful and how you use the site — anonymous visitor stats and session insights only. They only run if you accept. Your theme preference stays on your device.</p>' +
       '<div class="consent-banner-actions">' +
         '<a class="consent-banner-link" href="' + prefix() + 'privacy.html">Privacy policy</a>' +
         '<button class="btn btn-ghost" type="button" id="astraiva-consent-decline">Decline</button>' +
@@ -73,7 +82,7 @@
     document.body.appendChild(banner);
     var state = read();
     if (state === "granted") {
-      loadGtag();
+      loadTrackers();
     } else if (!state) {
       showBanner();
     }
