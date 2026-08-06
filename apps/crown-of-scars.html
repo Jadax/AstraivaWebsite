@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crown of Scars — Kingdom-Building Deck Roguelike | Astraiva</title>
+  <meta name="description" content="Crown of Scars is a kingdom-building deck roguelike written in blood and ink. 210 cards, five adaptive bosses and branching story events with memory. In development in Godot 4.">
+  <meta name="author" content="Astraiva — Tushant Sharma">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#0c0c11">
+  <link rel="canonical" href="https://astraiva.app/apps/crown-of-scars.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Astraiva">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:url" content="https://astraiva.app/apps/crown-of-scars.html">
+  <meta property="og:title" content="Crown of Scars — Kingdom-Building Deck Roguelike | Astraiva">
+  <meta property="og:description" content="Build a reign from the ruins of a scarred world. 210 cards, five adaptive bosses and branching story events that remember you. In development in Godot 4.">
+  <meta property="og:image" content="https://astraiva.app/assets/img/crown-of-scars.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "@id": "https://astraiva.app/apps/crown-of-scars.html#software",
+    "name": "Crown of Scars",
+    "url": "https://astraiva.app/apps/crown-of-scars.html",
+    "applicationCategory": "GameApplication",
+    "operatingSystem": "Windows",
+    "description": "A kingdom-building deck roguelike with 210 cards, five bosses and branching story events that remember how you fight. In development in Godot 4.",
+    "publisher": { "@id": "https://astraiva.app/#organization" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://astraiva.app/#organization",
+    "name": "Astraiva",
+    "url": "https://astraiva.app/",
+    "email": "astraiva.apps@gmail.com",
+    "founder": { "@type": "Person", "name": "Tushant Sharma", "url": "https://github.com/Jadax" },
+    "sameAs": ["https://github.com/Jadax", "https://ko-fi.com/jadax"]
+  }
+  </script>
+
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <script>
+    try {
+      var t = localStorage.getItem("astraiva-theme");
+      if (!t) t = window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+      document.documentElement.setAttribute("data-theme", t);
+    } catch (e) {}
+  </script>
+</head>
+<body>
+
+  <a class="skip-link" href="#content">Skip to content</a>
+
+  <header class="site-header" id="top">
+    <nav class="nav container" aria-label="Primary">
+      <a class="brand" href="../index.html" aria-label="Astraiva — home">
+        <img class="brand-logo" src="../assets/img/astraiva-logo-black.png" alt="Astraiva" width="164" height="30">
+      </a>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="../index.html#work">Work</a></li>
+        <li><a href="../index.html#tools">Tools</a></li>
+        <li><a href="../index.html#studio">Studio</a></li>
+        <li><a href="../index.html#contact">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle theme" aria-pressed="false">
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4.5"/>
+            <path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5 5l1.4 1.4M17.6 17.6L19 19M19 5l-1.4 1.4M6.4 17.6L5 19"/>
+          </svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M20 13.5A8 8 0 0 1 10.5 4 7.5 7.5 0 1 0 20 13.5Z"/>
+          </svg>
+        </button>
+        <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="content">
+
+    <section class="legal-hero">
+      <div class="container">
+        <div class="legal-hero-inner">
+          <p class="section-label">Game · Godot 4</p>
+          <h1>Crown of Scars</h1>
+          <p>A kingdom-building deck roguelike written in blood and ink.</p>
+          <div class="legal-meta">
+            <span>Status: In development</span>
+            <span>Astraiva · Tushant Sharma</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="legal-body">
+      <div class="container">
+
+        <figure class="qm-shot">
+          <img src="../assets/img/crown-of-scars.jpg" alt="Crown of Scars — a dark kingdom-building deck roguelike" width="1280" height="720" loading="eager">
+        </figure>
+
+        <div class="legal-prose">
+
+          <h2>About Crown of Scars</h2>
+          <p>
+            Build a reign from the ruins of a scarred world. Court the kingdom, marshal your cards
+            in battle, and survive branching story events that remember every choice you make.
+            210 cards, five bosses that adapt to your playstyle, and a hand-crafted Scarred Ink
+            art style. Built in Godot 4 for Windows.
+          </p>
+
+          <h3>Features</h3>
+          <ul class="qm-features">
+            <li>210-card deck with deep synergy between the four court factions</li>
+            <li>Five hand-designed bosses that adapt to the way you fight</li>
+            <li>Branching story events with memory — the world remembers you</li>
+            <li>Hand-crafted Scarred Ink art style, built pixel by pixel</li>
+            <li>Native Godot 4 engine with a Windows build</li>
+          </ul>
+
+          <div class="chips">
+            <span class="chip">Godot 4</span>
+            <span class="chip">Windows</span>
+            <span class="chip">Deckbuilder</span>
+            <span class="chip">Roguelike</span>
+          </div>
+
+          <div class="legal-callout">
+            <p>
+              <strong>Crown of Scars is in development.</strong> Follow the work on the
+              <a href="../index.html#work">Astraiva homepage</a>.
+            </p>
+            <p style="margin-top: 14px;">
+              <a class="btn btn-primary" href="../index.html#work">Back to featured work</a>
+              <a class="btn btn-ghost" href="../privacy/crown-of-scars.html">Privacy policy</a>
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <img class="brand-logo brand-logo-sm" src="../assets/img/astraiva-logo-black.png" alt="Astraiva" width="120" height="22">
+      </div>
+      <p class="footer-copy">© <span id="year">2026</span> Astraiva. Built by Tushant Sharma. Made by hand — no templates.</p>
+      <ul class="footer-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../privacy.html">Privacy</a></li>
+        <li><a href="../terms.html">Terms</a></li>
+      </ul>
+    </div>
+    <p class="footer-note">Product names referenced belong to their respective owners and are used for identification only.</p>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
