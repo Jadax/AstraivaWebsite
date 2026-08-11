@@ -50,6 +50,17 @@
     onScroll();
   }
 
+  /* ---------- Back to top ----------
+     #top lives on the sticky header, which is always already in view,
+     so a plain anchor jump would scroll nowhere. Intercept it instead. */
+  document.addEventListener("click", function (e) {
+    var a = e.target.closest ? e.target.closest('a[href="#top"]') : null;
+    if (!a) return;
+    e.preventDefault();
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+    history.replaceState(null, "", location.pathname + location.search);
+  });
+
   /* ---------- Mobile menu ---------- */
   var menuToggle = document.getElementById("menu-toggle");
   var navLinks = document.getElementById("nav-links");
@@ -108,8 +119,9 @@
   var marquee = document.getElementById("marquee-track");
   if (marquee) {
     var names = [
-      "Crown of Scars", "Stumped!", "LinguaTomo", "VibeGaffer",
-      "ThetaForge", "HorizonAI", "Rovyniq", "GPRO Strategy Tool",
+      "Crown of Scars", "Stumped!", "LinguaTomo", "Wishweaver's Rest",
+      "VibeGaffer", "SriCalendar", "Silvae", "ThetaForge",
+      "HorizonAI", "Rovyniq", "GPRO Strategy Tool",
       "TM Advisor", "FTP Advisor"
     ];
     var chunk = names.map(function (n) { return "<span>" + n + "</span>"; }).join("");
@@ -214,6 +226,39 @@
       else if (!e.shiftKey && document.activeElement === last) { first.focus(); e.preventDefault(); }
     });
   }
+
+  /* ---------- Contact form (Web3Forms) ----------
+     Works on any page that includes a .contact-form element, so the
+     form can be embedded on the support page and product pages too. */
+  document.querySelectorAll("form.contact-form").forEach(function (form) {
+    var status = form.querySelector("[data-form-status]");
+    form.addEventListener("submit", async function (e) {
+      e.preventDefault();
+      var button = form.querySelector("button[type=submit]");
+      if (!button || button.disabled) return;
+      button.disabled = true;
+      button.setAttribute("aria-busy", "true");
+      if (status) status.textContent = "Sending your message...";
+      try {
+        var response = await fetch(form.action, {
+          method: "POST",
+          body: new FormData(form),
+          headers: { Accept: "application/json" }
+        });
+        var result = await response.json();
+        if (!response.ok || !result.success) {
+          throw new Error("The form service returned an error.");
+        }
+        form.reset();
+        window.location.href = form.getAttribute("data-redirect") || "thank-you.html";
+      } catch (error) {
+        if (status) status.textContent = "We could not send your message. Please email astraiva.apps@gmail.com directly.";
+      } finally {
+        button.disabled = false;
+        button.removeAttribute("aria-busy");
+      }
+    });
+  });
 
   /* ---------- Footer year ---------- */
   var yearEl = document.getElementById("year");

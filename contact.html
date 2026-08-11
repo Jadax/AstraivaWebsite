@@ -137,7 +137,7 @@
             <p class="contact-card-kicker">Email</p>
             <h3>Direct line</h3>
             <p>For anything at all. I read every message myself and reply as fast as life allows.</p>
-            <p><a href="mailto:astraiva.apps@gmail.com">astraiva.apps@gmail.com</a></p>
+            <p><a href="#send-message">astraiva.apps@gmail.com</a></p>
           </div>
 
           <div class="contact-card">
@@ -155,14 +155,14 @@
           </div>
         </div>
 
-        <div class="contact-form-wrap">
+        <div class="contact-form-wrap" id="send-message">
           <h2>Send a message</h2>
           <p>
-            Send your message directly from this form. We use Web3Forms to deliver it to
-            <a href="mailto:astraiva.apps@gmail.com">astraiva.apps@gmail.com</a>.
+            Send your message directly from this form. It's delivered to
+            <a href="#send-message">astraiva.apps@gmail.com</a> through a secure form service.
           </p>
 
-          <form class="contact-form" id="contact-form" action="https://api.web3forms.com/submit" method="POST">
+          <form class="contact-form" id="contact-form" action="https://api.web3forms.com/submit" method="POST" data-redirect="thank-you.html">
             <input type="hidden" name="access_key" value="e728db5f-c2b2-48e6-ba89-4d1ed6a1eb48">
             <input type="hidden" name="subject" value="New message from the Astraiva website">
             <input type="hidden" name="from_name" value="Astraiva website">
@@ -187,7 +187,7 @@
                 Send message
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
               </button>
-              <p class="form-note" id="form-status" role="status" aria-live="polite" style="margin-top: 12px;">Your message will be sent securely through the form service.</p>
+              <p class="form-note" data-form-status role="status" aria-live="polite" style="margin-top: 12px;">Your message will be sent securely through the form service.</p>
             </div>
           </form>
         </div>
@@ -215,35 +215,5 @@
   </footer>
 
   <script src="js/main.js"></script>
-  <script>
-    document.getElementById("contact-form").addEventListener("submit", async function (e) {
-      e.preventDefault();
-      var form = this;
-      var button = form.querySelector("button[type=submit]");
-      var status = document.getElementById("form-status");
-      button.disabled = true;
-      button.setAttribute("aria-busy", "true");
-      status.textContent = "Sending your message...";
-
-      try {
-        var response = await fetch(form.action, {
-          method: "POST",
-          body: new FormData(form),
-          headers: { Accept: "application/json" }
-        });
-        var result = await response.json();
-        if (!response.ok || !result.success) {
-          throw new Error("The form service returned an error.");
-        }
-        form.reset();
-        window.location.href = "thank-you.html";
-      } catch (error) {
-        status.textContent = "We could not send your message. Please email astraiva.apps@gmail.com directly.";
-      } finally {
-        button.disabled = false;
-        button.removeAttribute("aria-busy");
-      }
-    });
-  </script>
 </body>
 </html>

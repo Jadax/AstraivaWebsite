@@ -7,8 +7,8 @@ https://astraiva.app** (GitHub Pages + custom domain).
 - **Company:** Astraiva, founded by Tushant Sharma
 - **Contact:** astraiva.apps@gmail.com
 - **Domain:** `astraiva.app` (bought at Spaceship, DNS below)
-- **Featured:** Crown of Scars, Stumped!, LinguaTomo, VibeGaffer, ThetaForge, HorizonAI, Rovyniq,
-  GPRO Strategy Tool, TM Advisor, FTP Advisor
+- **Featured:** Crown of Scars, Stumped!, LinguaTomo, Wishweaver's Rest, VibeGaffer, SriCalendar,
+  Silvae, ThetaForge, HorizonAI, Rovyniq, GPRO Strategy Tool, TM Advisor, FTP Advisor
 - **Features:** dark/light theme toggle (persisted), subtle starfield, scroll reveals, quick-view
   modals, FAQ accordion, mobile-first, accessible, reduced-motion aware
 

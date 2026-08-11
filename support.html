@@ -177,10 +177,28 @@
             </div>
 
             <div class="support-topic">
+              <h3>SriCalendar</h3>
+              <p>Free pastel content calendar. Feedback, feature ideas and bug reports are all welcome on GitHub.</p>
+              <div class="links">
+                <a href="https://github.com/Jadax/SriCalendar/issues" target="_blank" rel="noopener">Report an issue</a>
+                <a href="https://github.com/Jadax/SriCalendar" target="_blank" rel="noopener">Repository</a>
+              </div>
+            </div>
+
+            <div class="support-topic">
+              <h3>Silvae</h3>
+              <p>Free-forever plant care platform. Plant photo corrections and feature ideas are especially welcome.</p>
+              <div class="links">
+                <a href="https://github.com/Jadax/Silvae/issues" target="_blank" rel="noopener">Report an issue</a>
+                <a href="https://github.com/Jadax/Silvae" target="_blank" rel="noopener">Repository</a>
+              </div>
+            </div>
+
+            <div class="support-topic">
               <h3>LinguaTomo</h3>
               <p>Free Japanese learning app. Feedback, translation fixes and feature ideas are all welcome.</p>
               <div class="links">
-                <a href="mailto:astraiva.apps@gmail.com">Email the studio</a>
+                <a href="contact.html">Email the studio</a>
                 <a href="apps/linguatomo.html">App page</a>
               </div>
             </div>
@@ -189,7 +207,7 @@
               <h3>Crown of Scars &amp; Stumped!</h3>
               <p>Our in-development games. No public tracker yet, email us with anything: bugs, ideas, playtest requests.</p>
               <div class="links">
-                <a href="mailto:astraiva.apps@gmail.com">Email the studio</a>
+                <a href="contact.html">Email the studio</a>
               </div>
             </div>
           </div>
@@ -204,10 +222,40 @@
 
           <h2 id="still-stuck">Still stuck?</h2>
           <p>
-            Email <a href="mailto:astraiva.apps@gmail.com">astraiva.apps@gmail.com</a> and you'll
-            reach the founder directly. Include what you're using, what you expected and what
-            happened instead, it makes a reply much faster.
+            Send a message using the form below and it reaches the founder directly. Include what
+            you're using, what you expected and what happened instead, it makes a reply much faster.
           </p>
+
+          <div class="contact-form-wrap">
+            <form class="contact-form" action="https://api.web3forms.com/submit" method="POST" data-redirect="thank-you.html">
+              <input type="hidden" name="access_key" value="e728db5f-c2b2-48e6-ba89-4d1ed6a1eb48">
+              <input type="hidden" name="subject" value="New support message from the Astraiva website">
+              <input type="hidden" name="from_name" value="Astraiva support">
+              <input type="hidden" name="redirect" value="https://astraiva.app/thank-you.html">
+              <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display: none;">
+              <div class="form-row">
+                <div>
+                  <label for="sf-name">Your name</label>
+                  <input type="text" id="sf-name" name="name" autocomplete="name" maxlength="80" required>
+                </div>
+                <div>
+                  <label for="sf-email">Your email</label>
+                  <input type="email" id="sf-email" name="email" autocomplete="email" maxlength="254" required>
+                </div>
+              </div>
+              <div>
+                <label for="sf-message">Message</label>
+                <textarea id="sf-message" name="message" maxlength="5000" required></textarea>
+              </div>
+              <div>
+                <button class="btn btn-primary" type="submit">
+                  Send message
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                </button>
+                <p class="form-note" data-form-status role="status" aria-live="polite" style="margin-top: 12px;">Your message will be sent securely through the form service.</p>
+              </div>
+            </form>
+          </div>
 
           <div class="legal-callout">
             <p><strong>In one sentence:</strong> open-source tools get help fastest via GitHub issues; everything else is one email away.</p>
