@@ -81,6 +81,7 @@ data-safety declaration. Everything is already hosted here:
 | Crown of Scars | `https://astraiva.app/privacy/crown-of-scars.html` | `https://astraiva.app/apps/crown-of-scars.html` |
 | Stumped!       | `https://astraiva.app/privacy/stumped.html`        | `https://astraiva.app/apps/stumped.html`        |
 | LinguaTomo     | `https://astraiva.app/privacy/linguatomo.html`     | `https://astraiva.app/apps/linguatomo.html`     |
+| Silvae         | `https://astraiva.app/privacy/silvae.html`         | `https://astraiva.app/apps/silvae.html`         |
 | Site-wide      | `https://astraiva.app/privacy.html`     |,                                |
 | Terms          | `https://astraiva.app/terms.html`       |,                                |
 
