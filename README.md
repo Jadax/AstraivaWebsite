@@ -21,11 +21,13 @@ https://astraiva.app** (GitHub Pages + custom domain).
 ├── apps/                       # Per-app landing pages (SEO + store links)
 │   ├── crown-of-scars.html
 │   ├── stumped.html
-│   └── linguatomo.html
+│   ├── linguatomo.html
+│   └── silvae.html
 ├── privacy/                    # Per-app privacy policies (required by Google Play)
 │   ├── crown-of-scars.html
 │   ├── stumped.html
-│   └── linguatomo.html
+│   ├── linguatomo.html
+│   └── silvae.html
 ├── css/style.css               # Design system + dark/light themes + modal/FAQ/legal
 ├── js/main.js                  # Theme, reveals, starfield, marquee, nav, modal, FAQ
 ├── favicon.svg                 # Favicon (SVG)
@@ -89,8 +91,9 @@ data-safety declaration. Everything is already hosted here:
 1. Support email: `astraiva.apps@gmail.com` (required).
 2. Privacy policy URL: the per-app page above (required when the app requests data permissions;
    recommended regardless).
-3. Data Safety form: declare **no data collected**, matches what the policies say. Only add a
-   category if an SDK you add later actually collects it.
+3. Data Safety form: answer it separately for each app and match the app's dedicated privacy
+   policy. Do not declare "no data collected" for an app that uses accounts, sync, weather or
+   photo-identification services.
 4. Target audience / content ratings: set to match the game (cricket sim / deck roguelike).
 5. When an app goes live on Play, swap the landing page's "Coming soon" note for the real store
    link (`https://play.google.com/store/apps/details?id=com.astraiva.<app>`), and add the same URL
@@ -102,9 +105,9 @@ data-safety declaration. Everything is already hosted here:
 - **Meta**, keyword-rich title + description, `author`, `robots`, `theme-color`, canonical per page.
 - **Open Graph / Twitter**, title, description, image, URL, locale (all `astraiva.app`).
 - **Structured data (JSON-LD)**, `Organization` + `WebSite` on every page; homepage adds an
-  `ItemList` of all 10 products as `SoftwareApplication` and a `FAQPage` matching the on-page FAQ;
+  `ItemList` of all 13 products as `SoftwareApplication` and a `FAQPage` matching the on-page FAQ;
   each app landing page has a `SoftwareApplication` block.
-- **`robots.txt`** + **`sitemap.xml`** listing all 9 URLs.
+- **`robots.txt`** + **`sitemap.xml`** listing the public landing, policy, support and contact URLs.
 - **Content for long-tail search**, the FAQ targets real queries, and the per-app landing pages
   target "<app name>" search terms.
 
