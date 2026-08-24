@@ -1,138 +1,113 @@
-﻿# Astraiva, Company Website
+﻿# Astraiva Website
 
-The official Astraiva site. A static, zero-dependency site (HTML + CSS + JS) showcasing
-everything the studio ships: games, apps, tools and browser scripts. **Live at
-https://astraiva.app** (GitHub Pages + custom domain).
+Static, zero-dependency site (hand-written HTML + CSS + JS, no build step) for Astraiva,
+the independent studio of Tushant Sharma. Live at https://astraiva.app via GitHub Pages.
 
-- **Company:** Astraiva, founded by Tushant Sharma
-- **Contact:** astraiva.apps@gmail.com
-- **Domain:** `astraiva.app` (bought at Spaceship, DNS below)
-- **Featured:** Crown of Scars, Stumped!, LinguaTomo, Wishweaver's Rest, VibeGaffer, SriCalendar,
-  Silvae, ThetaForge, HorizonAI, Rovyniq, GPRO Strategy Tool, TM Advisor, FTP Advisor
-- **Features:** dark/light theme toggle (persisted), subtle starfield, scroll reveals, quick-view
-  modals, FAQ accordion, mobile-first, accessible, reduced-motion aware
+| Key | Value |
+|---|---|
+| Repo | `github.com/Jadax/AstraivaWebsite` (branch `main` auto-deploys, ~1–2 min) |
+| Contact | astraiva.apps@gmail.com (Web3Forms form on `contact.html` + `support.html`) |
+| Analytics | GA + Clarity, consent-gated by `js/consent.js`; nothing loads before "Accept" |
+| Run locally | `python -m http.server 4173` → http://localhost:4173 |
 
-## Project structure
+## File map
 
 ```
-├── index.html                  # Homepage, all sections + product data + JSON-LD
-├── privacy.html                # Site privacy policy
-├── terms.html                  # Terms of use (site + apps)
-├── apps/                       # Per-app landing pages (SEO + store links)
-│   ├── crown-of-scars.html
-│   ├── stumped.html
-│   ├── linguatomo.html
-│   └── silvae.html
-├── privacy/                    # Per-app privacy policies (required by Google Play)
-│   ├── crown-of-scars.html
-│   ├── stumped.html
-│   ├── linguatomo.html
-│   └── silvae.html
-├── css/style.css               # Design system + dark/light themes + modal/FAQ/legal
-├── js/main.js                  # Theme, reveals, starfield, marquee, nav, modal, FAQ
-├── favicon.svg                 # Favicon (SVG)
-├── apple-touch-icon.png        # iOS home-screen icon (uses the real logo)
-├── robots.txt                  # Crawler rules + sitemap reference
-├── sitemap.xml                 # All pages, URLs point at astraiva.app
-└── assets/img/                 # Optimized screenshots + logo
+index.html          Homepage: hero, featured work (games/apps), tools, browser tools,
+                    studio, FAQ, contact CTA. Holds #product-data JSON (below) + JSON-LD
+                    (Organization, WebSite, ItemList of all products, FAQPage).
+apps/*.html         Landing pages: crown-of-scars, stumped, linguatomo, silvae.
+privacy/*.html      Per-product privacy policies (same four products).
+privacy.html        Site-wide privacy policy.  terms.html  ToS.  support.html  Support.
+contact.html        Contact page (form).  thank-you.html  Post-submit redirect target.
+404.html            Served at ANY missing URL by GitHub Pages → absolute paths only.
+js/main.js          All interactions: theme, nav, starfield, marquee, reveals, FAQ,
+                    quick-view modal (reads #product-data), contact form (Web3Forms).
+js/consent.js       Consent banner + consent-gated tracker loader.
+css/style.css       Design tokens (dark default, [data-theme="light"] overrides),
+                    components, responsive (breakpoints: 920px, 680px), reduced-motion.
+css/fonts.css       Self-hosted Inter + Space Grotesk (@font-face, unicode-range subsets).
+sitemap.xml         Every public page.  robots.txt allows all, references sitemap.
 ```
 
-## Run locally
+## Architecture: `#product-data` is the single source of truth
+
+`index.html` contains `<script type="application/json" id="product-data">` — one object per
+product. `js/main.js` parses it and drives both the **quick-view modal** and the **marquee**
+(product names). When editing product info, update these locations so they stay in sync:
+
+| Location | What it holds |
+|---|---|
+| `#product-data` (index.html) | kicker, name, status, statusLabel, tagline, long, features[], chips[], media[], links[] — feeds modal + marquee |
+| Card markup (index.html) | Visible card: title, badge, tag, desc, chips, links (duplicates the JSON on purpose: cards render without JS) |
+| ItemList JSON-LD (index.html) | One `SoftwareApplication` per product; keep positions sequential |
+| `apps/<product>.html` | Landing page (only for products with a public page) |
+| `privacy/<product>.html` | Policy (only for products that hold user data) |
+| `sitemap.xml` | Add new public pages |
+| `support.html` | One `.support-topic` per product with repo/contact links |
+
+### Adding a product (checklist)
+
+1. Card markup in the right section of `index.html` (`featured-grid` = games/apps,
+   `tool-grid` = tools, `browser-list` = Tampermonkey scripts).
+2. Entry in `#product-data` (modal + marquee pick it up automatically).
+3. ItemList JSON-LD entry; renumber positions.
+4. If it has a landing/privacy page: create it from an existing page in `apps/` or
+   `privacy/` (nav, footer, JSON-LD, canonical are all relative-path aware), then add to
+   `sitemap.xml` and cross-link from the card + modal `links`.
+5. If it holds user data: add its providers to the third-party list in `privacy.html`.
+
+### Content rules (enforced by prior audits)
+
+- **Never overstate status.** Platform chips must match reality: "Web" live + "Mobile soon",
+  not "Android/iOS" for unreleased builds. Status labels: `dev` → "In development",
+  `live` → "Live · Free", `free` → "Free · Open source", `private` for unreleased/private.
+- **Claims must match the product's own privacy policy** (e.g. Silvae photo-ID is
+  server-side via Plant.id/PlantNet — never call it "on-device"; Silvae requires an account).
+- Free claims: no ads, no paywalls, no data selling — keep consistent across cards, FAQs,
+  `privacy.html` and JSON-LD (FAQPage JSON-LD text must equal the on-page FAQ answer).
+
+## Conventions
+
+- Relative paths inside the site; absolute (`/css/...`) only in `404.html` (served at
+  arbitrary depths). Subpages use `../` prefixes.
+- Theme: inline `<head>` script sets `data-theme` before CSS paint (prevents flash);
+  `js/main.js` only syncs the toggle. Never remove that inline script.
+- Accessibility: skip links, `aria-expanded`/`aria-pressed` state, focus trap in modal,
+  `prefers-reduced-motion` disables starfield/marquee/reveals.
+- Images: 1280×720 JPGs in `assets/img/`, always with `width`/`height` + `loading="lazy"`.
+- No comments unless explaining a non-obvious invariant; no frameworks, no dependencies.
+
+## Deployment
 
 ```powershell
-python -m http.server 4173
+git add -A; git commit -m "change"; git push origin main
 ```
 
-Then open `http://localhost:4173`.
+DNS (Spaceship): A `@` → 185.199.108.153 / .109 / .110 / .111, CNAME `www` → `jadax.github.io`.
+Repo Settings → Pages → custom domain `astraiva.app`, Enforce HTTPS.
 
-## Hosting, GitHub Pages + astraiva.app (all $0 except the domain)
+## App-store reference
 
-The site is deployed to **GitHub Pages** from the `main` branch of this repo
-(`https://github.com/Jadax/AstraivaWebsite`) and served at **https://astraiva.app**.
+Google Play needs a live privacy-policy URL per app. Hosted here:
 
-### DNS records (set at Spaceship)
+| App | Privacy policy | Landing |
+|---|---|---|
+| Crown of Scars | /privacy/crown-of-scars.html | /apps/crown-of-scars.html |
+| Stumped! | /privacy/stumped.html | /apps/stumped.html |
+| LinguaTomo | /privacy/linguatomo.html | /apps/linguatomo.html |
+| Silvae | /privacy/silvae.html | /apps/silvae.html |
 
-| Type  | Host      | Value                             |
-|-------|-----------|-----------------------------------|
-| A     | `@`       | `185.199.108.153`                 |
-| A     | `@`       | `185.199.109.153`                 |
-| A     | `@`       | `185.199.110.153`                 |
-| A     | `@`       | `185.199.111.153`                 |
-| CNAME | `www`     | `jadax.github.io`                 |
-
-Then in the repo: **Settings → Pages → Custom domain** set to `astraiva.app` and **Enforce HTTPS**
-enabled. GitHub auto-redirects `www.astraiva.app` → `astraiva.app` and issues the TLS certificate.
-
-### Deploying changes
-
-```powershell
-git add -A
-git commit -m "describe the change"
-git push origin main
-```
-
-GitHub Pages rebuilds and deploys automatically (~1–2 min).
-
-## App-store pages
-
-Google Play requires a unique, live **privacy-policy URL** per app, plus a support email and a
-data-safety declaration. Everything is already hosted here:
-
-| App            | Privacy policy                          | Landing page                     |
-|----------------|-----------------------------------------|----------------------------------|
-| Crown of Scars | `https://astraiva.app/privacy/crown-of-scars.html` | `https://astraiva.app/apps/crown-of-scars.html` |
-| Stumped!       | `https://astraiva.app/privacy/stumped.html`        | `https://astraiva.app/apps/stumped.html`        |
-| LinguaTomo     | `https://astraiva.app/privacy/linguatomo.html`     | `https://astraiva.app/apps/linguatomo.html`     |
-| Silvae         | `https://astraiva.app/privacy/silvae.html`         | `https://astraiva.app/apps/silvae.html`         |
-| Site-wide      | `https://astraiva.app/privacy.html`     |,                                |
-| Terms          | `https://astraiva.app/terms.html`       |,                                |
-
-**Play Console checklist (per app):**
-1. Support email: `astraiva.apps@gmail.com` (required).
-2. Privacy policy URL: the per-app page above (required when the app requests data permissions;
-   recommended regardless).
-3. Data Safety form: answer it separately for each app and match the app's dedicated privacy
-   policy. Do not declare "no data collected" for an app that uses accounts, sync, weather or
-   photo-identification services.
-4. Target audience / content ratings: set to match the game (cricket sim / deck roguelike).
-5. When an app goes live on Play, swap the landing page's "Coming soon" note for the real store
-   link (`https://play.google.com/store/apps/details?id=com.astraiva.<app>`), and add the same URL
-   to its card in `index.html` (`#product-data` → `links`).
-
-## SEO, what's already done
-
-- **Semantic HTML**, one `h1`, hierarchical `h2/h3`, descriptive alt text.
-- **Meta**, keyword-rich title + description, `author`, `robots`, `theme-color`, canonical per page.
-- **Open Graph / Twitter**, title, description, image, URL, locale (all `astraiva.app`).
-- **Structured data (JSON-LD)**, `Organization` + `WebSite` on every page; homepage adds an
-  `ItemList` of all 13 products as `SoftwareApplication` and a `FAQPage` matching the on-page FAQ;
-  each app landing page has a `SoftwareApplication` block.
-- **`robots.txt`** + **`sitemap.xml`** listing the public landing, policy, support and contact URLs.
-- **Content for long-tail search**, the FAQ targets real queries, and the per-app landing pages
-  target "<app name>" search terms.
-
-### To keep Google indexing astraiva.app
-
-1. **Google Search Console**, add the `astraiva.app` property, submit `sitemap.xml`.
-2. **URL Inspection** → request indexing for `/`.
-3. **Bing Webmaster Tools** (also feeds Copilot/ChatGPT search).
-4. Re-verify once HTTPS is enforced and the old `jadax.github.io/AstraivaWebsite/` URL stops
-   being the canonical address.
-
-### Honest expectations about "page 1 on Google"
-
-The technical SEO is done, but ranking depends on more than code:
-- New domains take time (weeks to months) and need repeated crawling.
-- Content & links matter most: publish screenshots as games ship, add changelogs, and get listed
-  on indie-game directories and socials.
-- Long-tail queries ("LinguaTomo Japanese app", "Stumped! cricket sim") are where a small site
-  wins first, those are the terms these pages are written to catch.
+Play Console per app: support email `astraiva.apps@gmail.com`; privacy URL from the table;
+Data Safety form must match that app's policy (never declare "no data collected" for apps
+with accounts, sync, weather or photo-ID). When a store listing goes live, swap the landing
+page's "coming soon" note for the store URL and add it to the product's `links` in
+`#product-data`.
 
 ## Maintenance notes
 
-- **No credentials live in this repo**, it's pure static. Never add API keys, tokens or passwords.
-- The `og:image` on legal/landing pages uses an app screenshot; swap to fresh art as it ships.
-- When a product's status changes (private → live), update its entry in `#product-data` on
-  `index.html` (status, links) and re-push.
-
-Built with hand-written HTML/CSS/JS. No frameworks and no build step. Optional website analytics load only after visitor consent; the apps and tools do not include tracking SDKs.
+- No secrets in this repo — pure static, and there should never be credentials here.
+- When a product's status changes, update: card badge, `#product-data` (status/statusLabel/
+  links), ItemList JSON-LD, and any landing-page callout — all in the same commit.
+- SEO basics are done (meta, OG/Twitter, canonical, JSON-LD, sitemap); keep FAQPage JSON-LD
+  text identical to the rendered FAQ.

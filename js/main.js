@@ -115,15 +115,14 @@
     starsEl.appendChild(frag);
   }
 
+  /* ---------- Product data (single source of truth) ---------- */
+  var productDataEl = document.getElementById("product-data");
+  var PRODUCTS = productDataEl ? JSON.parse(productDataEl.textContent) : {};
+
   /* ---------- Marquee ---------- */
   var marquee = document.getElementById("marquee-track");
   if (marquee) {
-    var names = [
-      "Crown of Scars", "Stumped!", "LinguaTomo", "Wishweaver's Rest",
-      "VibeGaffer", "SriCalendar", "Silvae", "ThetaForge",
-      "HorizonAI", "Rovyniq", "GPRO Strategy Tool",
-      "TM Advisor", "FTP Advisor"
-    ];
+    var names = Object.keys(PRODUCTS).map(function (k) { return PRODUCTS[k].name; });
     var chunk = names.map(function (n) { return "<span>" + n + "</span>"; }).join("");
     marquee.innerHTML = chunk + chunk;
     if (reduceMotion) marquee.style.animation = "none";
@@ -154,14 +153,23 @@
       var open = item.getAttribute("data-open") === "true";
       item.setAttribute("data-open", open ? "false" : "true");
       btn.setAttribute("aria-expanded", open ? "false" : "true");
-      if (open) answer.style.maxHeight = "";
-      else answer.style.maxHeight = answer.scrollHeight + "px";
+      if (open) {
+        answer.style.maxHeight = answer.scrollHeight + "px";
+        answer.offsetHeight; /* flush layout so the collapse animates */
+        answer.style.maxHeight = "";
+      } else {
+        answer.style.maxHeight = answer.scrollHeight + "px";
+      }
+    });
+    /* Once open, drop the cap so reflows (resize, font load) never clip. */
+    answer.addEventListener("transitionend", function (e) {
+      if (e.propertyName === "max-height" && item.getAttribute("data-open") === "true") {
+        answer.style.maxHeight = "none";
+      }
     });
   });
 
   /* ---------- Quick-view modal ---------- */
-  var productDataEl = document.getElementById("product-data");
-  var PRODUCTS = productDataEl ? JSON.parse(productDataEl.textContent) : {};
   var modal = document.getElementById("quick-modal");
 
   if (modal) {
@@ -191,7 +199,9 @@
       qm.features.innerHTML = p.features.map(function (f) { return "<li>" + f + "</li>"; }).join("");
       qm.chips.innerHTML = p.chips.map(function (c) { return "<span class=\"chip\">" + c + "</span>"; }).join("");
       qm.links.innerHTML = p.links.map(function (l) {
-        return "<a href=\"" + l.href + "\" target=\"_blank\" rel=\"noopener\">" + l.label + " <span aria-hidden=\"true\">→ </span></a>";
+        var external = /^https?:\/\//.test(l.href) && l.href.indexOf(location.hostname) === -1 && !/^https:\/\/(www\.)?astraiva\.app/.test(l.href);
+        var attrs = external ? ' target="_blank" rel="noopener"' : "";
+        return "<a href=\"" + l.href + "\"" + attrs + ">" + l.label + " <span aria-hidden=\"true\">→ </span></a>";
       }).join("");
       qm.media.innerHTML = p.media.map(function (m) {
         return "<figure class=\"qm-shot\"><img src=\"assets/img/" + m.src + "\" alt=\"" + m.alt + "\" width=\"1280\" height=\"720\" loading=\"lazy\"></figure>";

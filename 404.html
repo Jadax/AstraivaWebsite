@@ -4,9 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#0c0c11">
   <title>Page not found | Astraiva</title>
-  <link rel="stylesheet" href="css/fonts.css">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="/css/fonts.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <script>
+    try {
+      var t = localStorage.getItem("astraiva-theme");
+      if (!t) t = window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+      document.documentElement.setAttribute("data-theme", t);
+    } catch (e) {}
+  </script>
 </head>
 <body>
   <main class="legal-hero">
@@ -14,7 +23,7 @@
       <p class="section-label">404 · Page not found</p>
       <h1>That page has gone off-script.</h1>
       <p>The link may be outdated or the page may have moved. Head back to Astraiva and explore the catalogue.</p>
-      <p style="margin-top: 28px;"><a class="btn btn-primary" href="index.html">Back to Astraiva</a></p>
+      <p style="margin-top: 28px;"><a class="btn btn-primary" href="/">Back to Astraiva</a></p>
     </div>
   </main>
 </body>

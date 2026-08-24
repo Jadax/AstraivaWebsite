@@ -74,10 +74,6 @@ html {
   scroll-behavior: smooth;
 }
 
-html:focus-within {
-  scroll-behavior: smooth;
-}
-
 html[data-scroll-lock="true"],
 html[data-scroll-lock="true"] body {
   overflow: hidden;
