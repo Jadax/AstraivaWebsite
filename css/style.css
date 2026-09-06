@@ -930,6 +930,18 @@ button.featured-media {
   background: linear-gradient(135deg, #3f8f5a, #2a6342 55%, #1a3a2c);
 }
 
+.tile-gmat {
+  background: linear-gradient(135deg, #4a5fb5, #2f4175 55%, #1c2747);
+}
+
+.tile-humanizer {
+  background: linear-gradient(135deg, #a8563f, #6f3a2c 55%, #3a1f18);
+}
+
+.tile-chessapex {
+  background: linear-gradient(135deg, #b3b3b3, #6d6d6d 55%, #2f2f2f);
+}
+
 .tool-body {
   padding: 24px;
   display: flex;
@@ -1475,7 +1487,9 @@ button.featured-media {
 
 .footer-links {
   display: flex;
-  gap: 22px;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px 22px;
   list-style: none;
   margin: 0;
   padding: 0;
