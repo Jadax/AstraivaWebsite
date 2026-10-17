@@ -1362,6 +1362,12 @@ button.featured-media {
   margin-top: 30px;
 }
 
+.legal-note {
+  margin-top: 26px;
+  color: var(--text-2);
+  font-size: 0.95rem;
+}
+
 .legal-meta {
   display: flex;
   gap: 22px;
